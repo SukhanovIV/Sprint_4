@@ -60,4 +60,3 @@ class Questions:
     def find_questions(self):
         element = self.driver.find_element(*self.question_8)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
-
