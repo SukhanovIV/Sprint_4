@@ -8,13 +8,14 @@ class ForWhom:
     name_input_field = [By.XPATH,
                         "(//*[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN'])[1]"]  # Поле ввода "Имя"
     lastname_input_field = [By.XPATH,
-                            "(//*[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN'])[1]"]  # Поле ввода "Фамилия"
+                            "(//*[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN'])[2]"]  # Поле ввода "Фамилия"
     address_input_field = [By.XPATH,
-                           "(//*[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN'])[1]"]  # Поле ввода "Адрес"
-    station_selection_field = [By.XPATH,
-                               "(//*[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN'])[1]"]  # Поле выбора станции
+                           "((//*[@class='Input_Input__1iN_Z Input_Filled__1rDxs Input_Responsible__1jDKN'])[1]"]  # Поле ввода "Адрес"
+    station_selection_field = [By.XPATH, "//*[@class='select-search__input']"]  # Поле выбора станции
+    station_selection_field = [By.XPATH, "//*[@class='select-search__input']"]  # Поле выбора станции
+    station_selection_field = [By.XPATH, "//*[@class='select-search__input']"]  # Поле выбора станции
     phone_input_field = [By.XPATH,
-                         "(//*[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN'])[2]"]  # Поле ввода "Телефон"
+                         "((//*[@class='Input_Input__1iN_Z Input_Filled__1rDxs Input_Responsible__1jDKN'])[2]"]  # Поле ввода "Телефон"
 
     def __init__(self, driver):
         self.driver = driver
@@ -52,13 +53,8 @@ class ForWhom:
         self.driver.find_element(*self.address_input_field).send_keys(example_2.address)
         return example_2
 
-    def enter_station_1(self, example_1):
-        self.driver.find_element(*self.station_selection_field).send_keys(example_1.station)
-        return example_1
-
-    def enter_station_2(self, example_2):
-        self.driver.find_element(*self.station_selection_field).send_keys(example_2.station)
-        return example_2
+    def clicking_station_selection_field(self):
+        self.driver.find_element(*self.station_selection_field).click()
 
     def enter_phone_1(self, example_1):
         self.driver.find_element(*self.phone_input_field).send_keys(example_1.phone)

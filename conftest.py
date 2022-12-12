@@ -15,13 +15,13 @@ class Example:
 @pytest.fixture
 def example_1():
     return Example(name='Иван', lastname='Суханов', address='Москва, улица Фоничёвой, дом 4',
-                   station='Планерная', phone='88005553535')
+                   station='Сокольники', phone='88005553535')
 
 
 @pytest.fixture
 def example_2():
     return Example(name='Владимир', lastname='Махов', address='Москва, улица Руставели, дом 7',
-                   station='Бутырская', phone='89997772525')
+                   station='Лубянка', phone='89997772525')
 
 
 @pytest.fixture(scope='function')
