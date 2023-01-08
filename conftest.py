@@ -28,8 +28,8 @@ def example_2():
 def driver():
     options = Options()
     options.add_argument('--window-size=1920,1080')
-    #    options.add_argument('--headless')
-    driver = webdriver.Firefox(options=options)
+    # options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options, executable_path='/Users/Consul/PycharmProjects/Sprint_4/tests/geckodriver.exe')
     driver.get('https://qa-scooter.praktikum-services.ru/')
     yield driver
     driver.quit()
