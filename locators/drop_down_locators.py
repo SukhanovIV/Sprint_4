@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class Questions:
+class DropDownLocators:
 
     question_1 = [By.XPATH, "//div[@id='accordion__heading-0']"]  # "Сколько это стоит? И как оплатить?"
     question_2 = [By.XPATH, "//div[@id='accordion__heading-1']"]  # "Хочу сразу несколько самокатов! Так можно?"
@@ -11,7 +11,7 @@ class Questions:
                   "//div[@id='accordion__heading-4']"]  # "Можно ли продлить заказ или вернуть самокат раньше?"
     question_6 = [By.XPATH, "//div[@id='accordion__heading-5']"]  # "Вы привозите зарядку вместе с самокатом?"
     question_7 = [By.XPATH, "//div[@id='accordion__heading-6']"]  # "Можно ли отменить заказ?"
-    question_8 = [By.XPATH, "//div[@id='accordion__heading-7']"]  # "Я жизу за МКАДом, привезёте?"
+    question_8 = [By.XPATH, "//div[@id='accordion__heading-7']"]  # "Я живу за МКАДом, привезёте?"
 
     answer_1 = [By.XPATH,
                 "//p[contains(text(),'Сутки — 400 рублей. Оплата курьеру — наличными или')]"]  # Ответ на 1 вопрос
@@ -29,34 +29,3 @@ class Questions:
                 "//p[contains(text(),'Да, пока самокат не привезли. Штрафа не будет, объ')]"]  # Ответ на 7 вопрос
     answer_8 = [By.XPATH,
                 "//p[contains(text(),'Да, обязательно. Всем самокатов! И Москве, и Моско')]"]  # Ответ на 8 вопрос
-
-    def __init__(self, driver):
-        self.driver = driver
-
-    def clicking_question_1(self):
-        self.driver.find_element(*self.question_1).click()
-
-    def clicking_question_2(self):
-        self.driver.find_element(*self.question_2).click()
-
-    def clicking_question_3(self):
-        self.driver.find_element(*self.question_3).click()
-
-    def clicking_question_4(self):
-        self.driver.find_element(*self.question_4).click()
-
-    def clicking_question_5(self):
-        self.driver.find_element(*self.question_5).click()
-
-    def clicking_question_6(self):
-        self.driver.find_element(*self.question_6).click()
-
-    def clicking_question_7(self):
-        self.driver.find_element(*self.question_7).click()
-
-    def clicking_question_8(self):
-        self.driver.find_element(*self.question_8).click()
-
-    def find_questions(self):
-        element = self.driver.find_element(*self.question_8)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
